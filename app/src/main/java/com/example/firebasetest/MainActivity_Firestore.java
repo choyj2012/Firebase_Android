@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 //  https://wooastory.tistory.com/119
 //  https://choi-dev.tistory.com/69 FireStore 데이터 가져오기
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity_Firestore extends AppCompatActivity {
 
     EditText et_user_name,et_user_email;
     Button btn_save;

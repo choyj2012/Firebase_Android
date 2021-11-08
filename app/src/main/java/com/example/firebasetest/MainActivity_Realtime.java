@@ -18,12 +18,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-
 //  https://lakue.tistory.com/38?category=853542 참고
 //  https://github.com/lakue119/FirebaseSample
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_Realtime extends AppCompatActivity {
 
     EditText et_user_name,et_user_email;
     Button btn_save;
@@ -65,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(MainActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity_Realtime.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity_Realtime.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -84,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     User post = snapshot.getValue(User.class);
                     Log.w("FireBaseData", "getData" + post.toString());
                 } else {
-                    Toast.makeText(MainActivity.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity_Realtime.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
                 }
             }
 

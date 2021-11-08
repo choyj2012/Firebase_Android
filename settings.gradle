@@ -7,5 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "FirebaseTest"
-include ':app'
-include ':recyclerviewtest'
+include ':FirebaseTest'
+include ':RecyclerviewTest'

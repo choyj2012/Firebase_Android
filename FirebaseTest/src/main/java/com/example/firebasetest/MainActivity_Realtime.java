@@ -33,8 +33,8 @@ public class MainActivity_Realtime extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et_user_name = findViewById(R.id.et_user_name);
-        et_user_email = findViewById(R.id.et_user_email);
+        et_user_name = findViewById(R.id.et_word);
+        et_user_email = findViewById(R.id.et_mean);
         btn_save = findViewById(R.id.btn_save);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();

@@ -10,14 +10,10 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 
@@ -25,7 +21,7 @@ import java.util.HashMap;
 //  https://choi-dev.tistory.com/69 FireStore 데이터 가져오기
 public class MainActivity_Firestore extends AppCompatActivity {
 
-    EditText et_user_name,et_user_email;
+    EditText et_word, et_mean;
     Button btn_save;
     private FirebaseFirestore mDatabase;
     int dataIdx = 0;
@@ -35,8 +31,8 @@ public class MainActivity_Firestore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        et_user_name = findViewById(R.id.et_user_name);
-        et_user_email = findViewById(R.id.et_user_email);
+        et_word = findViewById(R.id.et_word);
+        et_mean = findViewById(R.id.et_mean);
         btn_save = findViewById(R.id.btn_save);
 
         mDatabase = FirebaseFirestore.getInstance();
@@ -44,15 +40,14 @@ public class MainActivity_Firestore extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String getUserName = et_user_name.getText().toString();
-                String getUserEmail = et_user_email.getText().toString();
+                String getWord = et_word.getText().toString();
+                String getMean = et_mean.getText().toString();
 
-                HashMap user = new HashMap<>();
-                user.put("name", getUserName);
-                user.put("email", getUserEmail);
+                HashMap word = new HashMap<>();
+                word.put(getWord, getMean);
 
-                mDatabase.collection("user")
-                        .add(user)
+                mDatabase.collection("word")
+                        .add(word)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {

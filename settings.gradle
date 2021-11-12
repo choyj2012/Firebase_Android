@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "FirebaseTest"
 include ':FirebaseTest'
 include ':RecyclerviewTest'
+include ':flipcardgame'

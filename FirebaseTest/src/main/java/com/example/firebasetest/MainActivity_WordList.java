@@ -55,5 +55,4 @@ public class MainActivity_WordList extends AppCompatActivity {
             }
         });
     }
-
 }
